@@ -1,0 +1,674 @@
+@import url('https://fonts.googleapis.com/css2?family=Micro+5+Charted&family=Patua+One&family=Silkscreen:wght@400;700&display=swap');
+
+
+body {
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+  font-size: 16px;
+  padding: 10px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
+}
+
+
+header {
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Espaçamento lateral interno */
+}
+
+.left-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre imagem e título */
+}
+
+
+header img {
+    width: 80px;
+}
+
+.tracos {
+    width: 45px;
+    margin-right: 13px;
+}
+
+section {
+    width: 80%;
+    height: 280px;
+    left: 50px;
+    top: 300px;
+    position: absolute;
+}
+
+section p {
+    font-size: 20px;
+    text-align: center;
+}
+
+section button {
+    font-family: "Patua One", serif;
+    background-color: pink;
+    width: 150px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 80px;
+    z-index: 10;
+    position: relative;
+    cursor: pointer;
+}
+
+
+figure img {
+    width: 80px;
+    position: relative;
+}
+
+/* Primeira imagem */
+figure img:nth-child(1) {
+    width: 100px;
+    top: 0px;
+    left: 0px;
+}
+
+/* Segunda imagem */
+figure img:nth-child(2) {
+    width: 100px;
+    top: 0;
+    left: 40%;
+}
+
+/* Terceira imagem */
+figure img:nth-child(3) {
+    width: 100px;
+    top: 370px;
+    left: 35%;
+}
+
+
+
+
+
+footer {
+    width: 100%;
+    background-color: pink;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+
+
+
+/* Modal Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.overlay img {
+    width: 45px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Quando ativado */
+.overlay.active {
+  display: flex;
+}
+
+/* Modal Container */
+.modal {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  max-width: 320px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  font-family: "Patua One", serif;
+}
+
+/* Título */
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 50px; /* Ajuste conforme necessário */
+}
+
+/* Botões dentro do modal */
+.modal-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.modal button,
+.close-btn {
+  font-family: "Patua One", serif;
+  background: pink;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* Botão fechar */
+.close-btn {
+  display: inline-block;
+  background: #e01b4c;
+  margin-right: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    transform: rotate(45deg);
+    animation: float 4s linear forwards;
+    opacity: 0.8;
+    z-index: -1; /* em vez de -1 */
+    pointer-events: none; /* <- ESSENCIAL! deixa o clique passar por ele */
+}
+
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: -10px;
+    top: 0;
+}
+
+
+
+
+
+
+
+
+/* SONHO */
+
+.japao {
+    position: absolute;
+    top: 15%;
+    width: 80%;
+    height: 350px;
+}
+
+.japao h1 {
+    margin-left: 40%;
+}
+
+.japao img {
+    width: 80px;
+    margin-left: 36.5%;
+}
+
+.japao_fig img:nth-child(1) {
+  position: relative;
+  top: 0px;
+  left: -30px;
+}
+
+.japao_fig img:nth-child(2) {
+  position: relative;
+  width: 60px;
+  top: 10px;
+  left: 150px;
+}
+
+.japao_fig img:nth-child(3) {
+  position: relative;
+  top: 310px;
+  left: -56px;
+}
+
+.carrossel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 330px auto 20px; /* 60px de espaço acima */
+    overflow: hidden;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 192, 203, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.carrossel-btn.left {
+    left: 0;
+}
+
+.carrossel-btn.right {
+    right: 0;
+}
+
+
+
+
+
+
+
+/* JOGO */
+
+.jogo {
+    position: absolute;
+    top: 15%;
+    width: 80%;
+    height: 200px;
+}
+
+.jogo img {
+    width: 160px;
+    margin-left: 26%;
+}
+
+.jogo img:last-of-type {
+    width: 320px; /* ou qualquer tamanho que desejar */
+    margin: 20px auto; /* centraliza a imagem e adiciona espaçamento */
+    margin-bottom: 20px;
+}
+
+.video-wrap {
+  /* centralizado na linha, bom pra usar dentro de sections normais */
+  text-align: center;          /* horizontal */
+         /* joga pra baixo */
+}
+
+.video-wrap iframe {
+  display: inline-block;       /* respeita o text-align */
+  max-width: 100%;             /* responsivo */
+  height: auto;
+}
+
+
+
+
+
+
+/* CARTAS */
+
+.carrossel-container-carta {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px; /* 60px de espaço acima */
+    overflow: hidden;
+}
+
+.carrossel-carta {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-carta img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 192, 203, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.carrossel-btn.left {
+    left: 0;
+}
+
+.carrossel-btn.right {
+    right: 0;
+}
+
+
+
+
+
+
+.carrossel-container-cartao {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px; /* 60px de espaço acima */
+    overflow: hidden;
+}
+
+.carrossel-cartao {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-cartao img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 192, 203, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.carrossel-btn.left {
+    left: 0;
+}
+
+.carrossel-btn.right {
+    right: 0;
+}
+
+
+
+
+
+
+/* ANIME */ 
+
+.anime img {
+    width: 60px;
+    margin-top: 16px;
+    margin-left: 41%;
+}
+
+.anime h1 {
+    text-align: center;
+}
+
+.anime-carrossel {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+
+.anime-carrossel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-item {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+   margin: 0 auto 340px; /* margem superior = 0 */
+   height: 200px; /* ⬅️ altura do carrossel */
+}
+
+.carrossel-item p {
+  margin-bottom: 100px;
+}
+
+.carrossel-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.carrossel-texto {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.4); /* fundo translúcido */
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+.carrossel-btn {
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: rgba(255, 192, 203, 0.7);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 2; /* garantir que fique sobre as imagens */
+}
+
+.carrossel-btn.left {
+  left: 0;
+}
+
+.carrossel-btn.right {
+  right: 0;
+}
+
+.sec-anime p {
+    margin-top: 490px;
+}
+
+
+
+
+
+
+/* DESENHO */
+
+main.desenhos {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+main.desenhos img {
+  width: 62px;
+}
+
+main.desenhos h3 {
+  margin-right: 250px;
+}
+
+.carrossel-section {
+  display: block;       /* para garantir empilhamento vertical */
+  margin-bottom: 60px;  /* mais espaçamento */
+  position: relative;   /* para conter os botões absolutos */
+  top: 2%;
+}
+
+.carrossel-container-desenhoI,
+.carrossel-container-desenhoC {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 320px;       /* altura fixa para evitar colapsos */
+  overflow: hidden;
+}
+
+.carrossel-desenhoI,
+.carrossel-desenhoC {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 300px;       /* mesma altura dos imgs */
+}
+
+.carrossel-desenhoI img,
+.carrossel-desenhoC img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.carrossel-btn {
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 192, 203, 0.7);
+  border: none;
+  cursor: pointer;
+  font-size: 20px; /* ícone maior */
+  z-index: 10;
+}
+
+/* Largura lateral mais afastada */
+.carrossel-btn.left {
+  left: 0;
+}
+
+.carrossel-btn.right {
+  right: 0;
+}
+
+
+
+/* GALERIA */
+
+.galeria h1 {
+    text-align: center;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) scale(1.5) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+  body {
+    display: none; /* ou algum outro ajuste */
+  }
+}

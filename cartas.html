@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+    <title> Cartas </title>
+</head>
+<body>
+    <header>
+    <div class="left-group">
+        <img src="images/hello.png" alt="Hello">
+        <h1>Isabela</h1>
+    </div>
+    <a href="index.html"><img class="tracos" src="images/arrow.png" alt="Flecha"></a>
+    </header>
+
+    <main>
+    <h1> Cartas </h1>
+    <p> As duas escritas com muito amor pra ti. </p>
+
+    <div class="carrossel-container-carta">
+        <button class="carrossel-btn left btn-left-carta">&#10094;</button>
+        <div class="carrossel-carta">
+            <img src="images/carta1.jpeg" alt="Imagem 1">
+            <img src="images/carta2.jpeg" alt="Imagem 2">
+        </div>
+        <button class="carrossel-btn right btn-right-carta">&#10095;</button>
+    </div>
+
+    <h1> Cartões </h1>
+    <p> Aja criatividade pra gente fazer eles kkkk </p>
+
+    <div class="carrossel-container-cartao">
+        <button class="carrossel-btn left btn-left-cartao">&#10094;</button>
+        <div class="carrossel-cartao">
+            <img src="images/cartao1.jpg" alt="Imagem 1">
+            <img src="images/cartao2.jpg" alt="Imagem 2">
+            <img src="images/cartao3.jpg" alt="Imagem 2">
+            <img src="images/cartao4.jpg" alt="Imagem 2">
+            <img src="images/cartao5.jpg" alt="Imagem 2">
+            <img src="images/cartao6.jpg" alt="Imagem 2">
+            <img src="images/cartao7.jpg" alt="Imagem 2">
+            <img src="images/cartao8.jpg" alt="Imagem 2">
+            <img src="images/cartao9.jpg" alt="Imagem 2">
+            <img src="images/cartao10.jpeg" alt="Imagem 2">
+            <img src="images/cartao11.jpeg" alt="Imagem 2">
+            <img src="images/cartao12.jpeg" alt="Imagem 2">
+            <img src="images/aniversarioC.jpeg">
+            <img src="images/aniversarioI.jpeg">
+        </div>
+        <button class="carrossel-btn right btn-right-cartao">&#10095;</button>
+    </div>
+</main>
+
+    </main>
+
+     <footer> 
+    <p> Criador: Carlos Eduardo - O namorado garoto de programa. </p>
+  </footer>
+
+
+<script>
+// === Carrossel Desenho I ===
+// === Carrossel Carta ===
+const carrosselCarta = document.querySelector('.carrossel-carta');
+const imagensCarta = document.querySelectorAll('.carrossel-carta img');
+let indexCarta = 0;
+
+document.querySelector('.btn-left-carta').addEventListener('click', () => {
+  if (indexCarta > 0) {
+    indexCarta--;
+    atualizarCarrosselCarta();
+  }
+});
+
+document.querySelector('.btn-right-carta').addEventListener('click', () => {
+  if (indexCarta < imagensCarta.length - 1) {
+    indexCarta++;
+    atualizarCarrosselCarta();
+  }
+});
+
+function atualizarCarrosselCarta() {
+  const largura = imagensCarta[0].clientWidth;
+  carrosselCarta.style.transform = `translateX(-${largura * indexCarta}px)`;
+}
+
+
+// === Carrossel Cartão ===
+const carrosselCartao = document.querySelector('.carrossel-cartao');
+const imagensCartao = document.querySelectorAll('.carrossel-cartao img');
+let indexCartao = 0;
+
+document.querySelector('.btn-left-cartao').addEventListener('click', () => {
+  if (indexCartao > 0) {
+    indexCartao--;
+    atualizarCarrosselCartao();
+  }
+});
+
+document.querySelector('.btn-right-cartao').addEventListener('click', () => {
+  if (indexCartao < imagensCartao.length - 1) {
+    indexCartao++;
+    atualizarCarrosselCartao();
+  }
+});
+
+function atualizarCarrosselCartao() {
+  const largura = imagensCartao[0].clientWidth;
+  carrosselCartao.style.transform = `translateX(-${largura * indexCartao}px)`;
+}
+
+
+// === Ajustar ao redimensionar ===
+window.addEventListener('resize', () => {
+  atualizarCarrosselCarta();
+  atualizarCarrosselCartao();
+});
+</script>
+
+
+<script>
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + "vw"; // posição horizontal aleatória
+        heart.style.top = "100vh"; // começa de baixo
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove(); // remove após animação
+        }, 4000);
+    }
+
+    setInterval(createHeart, 500); // Cria um coração a cada 0.5 segundos
+</script>
+    
+</body>
+</html>

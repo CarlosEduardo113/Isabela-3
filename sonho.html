@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+    <title> Sonho dela! </title>
+</head>
+<body>
+
+    <header>
+    <div class="left-group">
+        <img src="images/hello.png" alt="Hello">
+        <h1>Isabela</h1>
+    </div>
+    <a href="index.html"><img class="tracos" src="images/arrow.png" alt="Flecha"></a>
+    </header>
+
+   <section class="japao">
+    <h1> Japão! </h1>
+    <img src="images/japao_logo.png">
+    <p> Nunca esqueci do sonho que você tem de viajar pro Japão kjkjk um sonho que eu também sempre tive. Não se preocupe meu bem, a gente vai ir sim, mas só se tu prometer não me trocar por nenhum japa. </p>
+   </section>
+
+   <figure class="japao_fig">
+    <img src="images/aviao.png">
+    <img src="images/japao_bandeira.webp">
+    <img src="images/sushi.png">
+   </figure>
+
+
+   <div class="carrossel-container">
+    <button class="carrossel-btn left">&#10094;</button>
+    <div class="carrossel">
+        <img src="images/akihabara.jpg" alt="Imagem 1">
+        <img src="images/sakura.jpg" alt="Imagem 2">
+        <img src="images/japao.avif" alt="Imagem 3">
+        <!-- Adicione mais imagens se quiser -->
+    </div>
+    <button class="carrossel-btn right">&#10095;</button>
+</div>
+
+
+        <footer> 
+        <p> Criador: Carlos Eduardo - O namorado garoto de programa. </p>
+    </footer>
+
+<script>
+let carrossel = document.querySelector('.carrossel');
+let imagens = document.querySelectorAll('.carrossel img');
+let index = 0;
+
+document.querySelector('.carrossel-btn.left').addEventListener('click', () => {
+    if (index > 0) {
+        index--;
+        atualizarCarrossel();
+    }
+});
+
+document.querySelector('.carrossel-btn.right').addEventListener('click', () => {
+    if (index < imagens.length - 1) {
+        index++;
+        atualizarCarrossel();
+    }
+});
+
+function atualizarCarrossel() {
+    const largura = imagens[0].clientWidth;
+    carrossel.style.transform = `translateX(-${largura * index}px)`;
+}
+</script>
+
+
+    <script>
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + "vw"; // posição horizontal aleatória
+        heart.style.top = "100vh"; // começa de baixo
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove(); // remove após animação
+        }, 4000);
+    }
+
+    setInterval(createHeart, 500); // Cria um coração a cada 0.5 segundos
+</script>
+
+
+
+
+    
+</body>
+</html>

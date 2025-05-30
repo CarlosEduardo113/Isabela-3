@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+    <title> Animes </title>
+</head>
+<body>
+        <header>
+    <div class="left-group">
+        <img src="images/hello.png" alt="Hello">
+        <h1>Isabela</h1>
+    </div>
+    <a href="index.html"><img class="tracos" src="images/mitsuri.png" alt="Flecha"></a>
+    </header>
+
+    <main class="anime">
+        <img src="images/chihiro.png">
+        <h1>Ta aí uma coisa que a gente realmente gosta</h1>
+        
+    </main>
+
+     <!-- CARROSSEL 1 -->
+<div class="anime-carrossel">
+  <button class="carrossel-btn left">&#10094;</button>
+  <div class="carrossel-carta anime-carrossel-inner">
+
+    <div class="carrossel-item">
+      <img src="images/kimetsu.webp" alt="Imagem 1">
+      <p class="carrossel-texto">O Favorito né</p>
+    </div>
+
+    <div class="carrossel-item">
+      <img src="images/jujutsu_banner.jpg" alt="Imagem 2">
+      <p class="carrossel-texto">Teu 2º favorito eu diria</p>
+    </div>
+
+    <div class="carrossel-item">
+      <img src="images/yubisaki.webp" alt="Imagem 3">
+      <p class="carrossel-texto">Nosso Anime</p>
+    </div>
+
+        <div class="carrossel-item">
+      <img src="images/rezero.avif" alt="Imagem 1">
+      <p class="carrossel-texto">Teu verdadeiro favorito aí</p>
+    </div>
+
+    <div class="carrossel-item">
+      <img src="images/mitsuri_ela.webp" alt="Imagem 2">
+      <p class="carrossel-texto">Literalmente você</p>
+    </div>
+
+    <div class="carrossel-item">
+      <img src="images/kimino.avif" alt="Imagem 3">
+      <p class="carrossel-texto">Vey esse anime me faz lembrar muito a gente</p>
+    </div>
+
+    <div class="carrossel-item">
+      <img src="images/dandadan.jpg" alt="Imagem 3">
+      <p class="carrossel-texto">Outro anime que a gente viu, vey segunda temporada tá perto ein</p>
+    </div>
+
+        <div class="carrossel-item">
+      <img src="images/filme_kimetsu.webp" alt="Imagem 3">
+      <p class="carrossel-texto">Se o Bruno não te levar pra ver eu vou até Brasília e te levo, rlxx</p>
+    </div>
+
+     <div class="carrossel-item">
+      <img src="images/lixo.avif" alt="Imagem 3">
+      <p class="carrossel-texto">QUE ÓDIO DELE KJKK dá ciume ver tu postando coisa dele no tiktok, aff</p>
+    </div>
+
+    
+
+  </div>
+  <button class="carrossel-btn right">&#10095;</button>
+</div>
+
+<!-- CARROSSEL 2 -->
+<div class="anime-carrossel">
+  <button class="carrossel-btn left">&#10094;</button>
+  <div class="carrossel-carta anime-carrossel-inner">
+
+    <div class="carrossel-item">
+      <img src="images/invencivel.webp" alt="Imagem 1">
+      <p class="carrossel-texto">Sei que não é anime KKKK</p>
+    </div>
+
+    <div class="carrossel-item">
+      <img src="images/markeve.webp" alt="Imagem 2">
+      <p class="carrossel-texto">Fiquei VICIADO nisso, tu só recomenda coisa boa</p>
+    </div>
+
+    <div class="carrossel-item">
+      <img src="images/invencible.webp" alt="Imagem 3">
+      <p class="carrossel-texto">Cade a proxima temporada que não chega nunca AAA</p>
+    </div>
+
+  </div>
+  <button class="carrossel-btn right">&#10095;</button>
+
+</div>
+
+     <footer> 
+    <p> Criador: Carlos Eduardo - O namorado garoto de programa. </p>
+  </footer>
+
+
+<script>
+document.querySelectorAll('.anime-carrossel').forEach(carrossel => {
+  const track = carrossel.querySelector('.anime-carrossel-inner');
+  const items = carrossel.querySelectorAll('.carrossel-item');
+  const btnL = carrossel.querySelector('.carrossel-btn.left');
+  const btnR = carrossel.querySelector('.carrossel-btn.right');
+  let index = 0;
+
+  function goToSlide(i) {
+    const largura = items[0].clientWidth;
+    track.style.transform = `translateX(-${largura * i}px)`;
+  }
+
+  btnL.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      goToSlide(index);
+    }
+  });
+
+  btnR.addEventListener('click', () => {
+    if (index < items.length - 1) {
+      index++;
+      goToSlide(index);
+    }
+  });
+
+  window.addEventListener('resize', () => goToSlide(index));
+});
+</script>
+
+
+
+
+
+
+    <script>
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + "vw"; // posição horizontal aleatória
+        heart.style.top = "100vh"; // começa de baixo
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove(); // remove após animação
+        }, 4000);
+    }
+
+    setInterval(createHeart, 500); // Cria um coração a cada 0.5 segundos
+</script>
+
+    
+</body>
+</html>

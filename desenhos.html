@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="css/style.css" rel="stylesheet">
+  <script src="js/script.js"></script>
+    <title> Desenhos </title>
+</head>
+<body>
+        <header>
+    <div class="left-group">
+        <img src="images/hello.png" alt="Hello">
+        <h1>Isabela</h1>
+    </div>
+    <a href="index.html"><img class="tracos" src="images/arrow.png" alt="Flecha"></a>
+    </header>
+
+    <main class="desenhos">
+  <img src="images/desenho.png">
+  <h2>E tu falava que não sabia desenhar...</h2>
+  <h3>Seus Desenhos</h3>
+</main>
+
+<!-- Carrossel Desenho I -->
+<section class="carrossel-section">
+  <div class="carrossel-container-desenhoI">
+    <button class="carrossel-btn left btn-left-desenhoI">&#10094;</button>
+    <div class="carrossel-desenhoI">
+      <img src="images/stitch.jpeg" alt="Imagem 1">
+      <img src="images/stitch2.jpeg" alt="Imagem 2">
+      <img src="images/jujuba.jpeg" alt="Imagem 2">
+      <img src="images/celula.jpeg" alt="Imagem 2">
+      <img src="images/cartaHelena.jpeg" alt="Imagem 2">
+      <img src="images/cartaMaria.jpeg" alt="Imagem 2">
+    </div>
+    <button class="carrossel-btn right btn-right-desenhoI">&#10095;</button>
+  </div>
+</section>
+
+<h3>Meus Desenhos</h3>
+
+<!-- Carrossel Desenho C -->
+<section class="carrossel-section">
+  <div class="carrossel-container-desenhoC">
+    <button class="carrossel-btn left btn-left-desenhoC">&#10094;</button>
+    <div class="carrossel-desenhoC">
+      <img src="images/desenhoIsa1.jpeg" alt="Imagem 1">
+      <img src="images/desenhoIsa2.jpeg" alt="Imagem 2">
+      <img src="images/desenhoIsa3.jpg" alt="Imagem 3">
+      <img src="images/desenhoIsa4.jpg" alt="Imagem 3">
+      <img src="images/desenhoIsa5.jpg" alt="Imagem 3">
+      <img src="images/desenhoIsa6.jpg" alt="Imagem 3">
+      <img src="images/desenhoIsa7.jpg" alt="Imagem 3">
+      <img src="images/desenhoIsa8.jpg" alt="Imagem 3">
+      <img src="images/desenhoIsa9.jpeg" alt="Imagem 3">
+      <img src="images/gptisa1.jpeg" alt="Imagem 3">
+      <img src="images/gptisa2.jpeg" alt="Imagem 3">
+      <img src="images/gptisa3.jpeg" alt="Imagem 3">
+      <img src="images/gptisa4.jpeg" alt="Imagem 3">
+      <img src="images/gptisa5.jpeg" alt="Imagem 3">
+    </div>
+    <button class="carrossel-btn right btn-right-desenhoC">&#10095;</button>
+  </div>
+</section>
+
+
+
+     <footer> 
+    <p> Criador: Carlos Eduardo - O namorado garoto de programa. </p>
+  </footer>
+
+
+
+
+
+<script>
+    /* === Carrossel I === */
+    const trackI   = document.querySelector('.carrossel-desenhoI');
+    const slidesI  = trackI.querySelectorAll('img');
+    let   indexI   = 0;
+
+    document.querySelector('.btn-left-desenhoI').addEventListener('click', ()=> {
+      if(indexI>0){indexI--;move(trackI,slidesI,indexI);}
+    });
+    document.querySelector('.btn-right-desenhoI').addEventListener('click', ()=> {
+      if(indexI<slidesI.length-1){indexI++;move(trackI,slidesI,indexI);}
+    });
+
+    /* === Carrossel C === */
+    const trackC   = document.querySelector('.carrossel-desenhoC');
+    const slidesC  = trackC.querySelectorAll('img');
+    let   indexC   = 0;
+
+    document.querySelector('.btn-left-desenhoC').addEventListener('click', ()=> {
+      if(indexC>0){indexC--;move(trackC,slidesC,indexC);}
+    });
+    document.querySelector('.btn-right-desenhoC').addEventListener('click', ()=> {
+      if(indexC<slidesC.length-1){indexC++;move(trackC,slidesC,indexC);}
+    });
+
+    /* === função comum === */
+    function move(track,slides,idx){
+      const w = slides[0].clientWidth;
+      track.style.transform = `translateX(-${w*idx}px)`;
+    }
+    /* reajusta se a largura mudar */
+    window.addEventListener('resize',()=>{
+      move(trackI,slidesI,indexI);
+      move(trackC,slidesC,indexC);
+    });
+</script>
+
+  <!-- Corações animados -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = "100vh";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+
+    
+</body>
+</html>

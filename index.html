@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/script.js"></script>
+  <title> Isabela's Website </title>
+</head>
+<body>
+  <header>
+    <div class="left-group">
+      <img src="images/hello.png" alt="Hello">
+      <h1>Isabela</h1>
+    </div>
+    <img class="tracos" src="images/mail.png" alt="Carta" id="openMailModal">
+  </header>
+
+  <main>
+    <section>
+      <p> Bom... Esse é um mini-site que criei pra você KJKJKJKK Coloquei um pouco de tudo, sei que não ficou bom, faltou muita coisa pra colocar, mas é de coração! </p>
+      <p> Eu Te Amo Muito meu Amor! </p>
+      <button id="openModalBtn">Começar!</button>
+    </section>
+
+    <figure>
+      <img src="images/hello2.png">
+      <img src="images/hello3.png">
+      <img src="images/hello 4.png">
+    </figure>
+  </main>
+
+  <!-- Modal 1 -->
+  <div class="overlay" id="modalOverlay">
+    <div class="modal">
+      <label class="close-btn" id="closeModalBtn"> X </label>
+      <h2>Escolhe um Tema</h2>
+      <div class="modal-buttons">
+        <button onclick="window.location.href='sonho.html'">Sonho</button>
+        <button onclick="window.location.href='jogo.html'">Jogo</button>
+        <button onclick="window.location.href='cartas.html'">Declarações</button>
+        <button onclick="window.location.href='anime.html'">Anime</button>
+        <button onclick="window.location.href='desenhos.html'">Desenhos</button>
+        <button onclick="window.location.href='galeria.html'">Galeria</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 (Carta) -->
+  <div class="overlay" id="modalOverlayMail">
+    <div class="modal">
+      <label class="close-btn" id="closeModalBtnMail"> X </label>
+      <h2> Pedido de Desculpas </h2>
+      <p> Bom... Desculpa por tudo mesmo, por tudo o que errei com você, pelas coisas que devia ter te contado, pelas coisas que falei no momento da raiva, quero que você saiba que tudo foi da boca para fora. Eu Te Amo muito mesmo, sério, eu não acreditaria se me contassem que um dia eu iria amar alguém tanto assim. Você é a razão da minha vida, a garota dos meus sonhos, e a aquela que eu escolhi amar. Quero muito que as coisas se acertem logo, mesmo que não seja agora, eu espero o tempo que for. Yumi e Ravi precisam nascer! </p>
+      <p> Eu Te Amo, Isabela! </p>
+      <img src="images/coracao.png" alt="Coração">
+    </div>
+  </div>
+
+  <footer> 
+    <p> Criador: Carlos Eduardo - O namorado garoto de programa. </p>
+  </footer>
+
+  <!-- Corações animados -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = "100vh";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+
+  <!-- Scripts dos modais -->
+  <script>
+    // Modal 1 (Começar!)
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const overlay = document.getElementById('modalOverlay');
+
+    openBtn.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      overlay.style.display = 'none';
+    });
+
+    // Modal 2 (mail.png)
+    const openMail = document.getElementById('openMailModal');
+    const overlayMail = document.getElementById('modalOverlayMail');
+    const closeMail = document.getElementById('closeModalBtnMail');
+
+    openMail.addEventListener('click', () => {
+      overlayMail.style.display = 'flex';
+    });
+
+    closeMail.addEventListener('click', () => {
+      overlayMail.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

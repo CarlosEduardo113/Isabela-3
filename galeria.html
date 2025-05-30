@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+    <title>Galeria</title>
+</head>
+<body>
+    <header>
+    <div class="left-group">
+        <img src="images/hello.png" alt="Hello">
+        <h1>Isabela</h1>
+    </div>
+    <a href="index.html"><img class="tracos" src="images/arrow.png" alt="Flecha"></a>
+    </header>
+
+    <main class="galeria">
+        <h1> Fotos </h1>
+        <p> Bom... Aqui estão todas as fotos suas que eu guardei, desde criança até agora! </p>
+    </main>
+    
+    <section class="carrossel-section">
+  <div class="carrossel-container-desenhoI">
+    <button class="carrossel-btn left btn-left-desenhoI">&#10094;</button>
+    <div class="carrossel-desenhoI">
+      <img src="images/isa1.jpeg" alt="Imagem 1">
+      <img src="images/isa2.jpeg" alt="Imagem 2">
+      <img src="images/isa3.jpeg" alt="Imagem 2">
+      <img src="images/isa4.jpeg" alt="Imagem 2">
+      <img src="images/isa5.jpeg" alt="Imagem 2">
+      <img src="images/isa6.jpeg" alt="Imagem 2">
+      <img src="images/isa7.jpeg" alt="Imagem 2">
+      <img src="images/isa8.jpeg" alt="Imagem 2">
+      <img src="images/isa9.jpeg" alt="Imagem 2">
+      <img src="images/isa10.jpeg" alt="Imagem 2">
+      <img src="images/isa11.jpeg" alt="Imagem 2">
+      <img src="images/isa12.jpeg" alt="Imagem 2">
+      <img src="images/isa13.jpeg" alt="Imagem 2">
+      <img src="images/isa14.jpeg" alt="Imagem 2">
+    </div>
+    <button class="carrossel-btn right btn-right-desenhoI">&#10095;</button>
+  </div>
+</section>
+
+<p>Você criança, mds coisa fofa</p>
+
+<!-- Carrossel Desenho C -->
+<section class="carrossel-section">
+  <div class="carrossel-container-desenhoC">
+    <button class="carrossel-btn left btn-left-desenhoC">&#10094;</button>
+    <div class="carrossel-desenhoC">
+      <img src="images/isacriança1.jpeg" alt="Imagem 1">
+      <img src="images/isacriança2.jpeg" alt="Imagem 1">
+      <img src="images/isacriança3.jpeg" alt="Imagem 1">
+      <img src="images/isacriança4.jpeg" alt="Imagem 1">
+      <img src="images/isacriança5.jpeg" alt="Imagem 1">
+      <img src="images/isacriança6.jpeg" alt="Imagem 1">
+    </div>
+    <button class="carrossel-btn right btn-right-desenhoC">&#10095;</button>
+  </div>
+</section>
+
+<p> VOCÊ BEBÊ MDSS, é a Yumi! </p>
+
+<div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/6Ik05l-r_UU?si=mdJ97fEN71hL6y86" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+     <footer> 
+    <p> Criador: Carlos Eduardo - O namorado garoto de programa. </p>
+  </footer>
+
+
+<script>
+    /* === Carrossel I === */
+    const trackI   = document.querySelector('.carrossel-desenhoI');
+    const slidesI  = trackI.querySelectorAll('img');
+    let   indexI   = 0;
+
+    document.querySelector('.btn-left-desenhoI').addEventListener('click', ()=> {
+      if(indexI>0){indexI--;move(trackI,slidesI,indexI);}
+    });
+    document.querySelector('.btn-right-desenhoI').addEventListener('click', ()=> {
+      if(indexI<slidesI.length-1){indexI++;move(trackI,slidesI,indexI);}
+    });
+
+    /* === Carrossel C === */
+    const trackC   = document.querySelector('.carrossel-desenhoC');
+    const slidesC  = trackC.querySelectorAll('img');
+    let   indexC   = 0;
+
+    document.querySelector('.btn-left-desenhoC').addEventListener('click', ()=> {
+      if(indexC>0){indexC--;move(trackC,slidesC,indexC);}
+    });
+    document.querySelector('.btn-right-desenhoC').addEventListener('click', ()=> {
+      if(indexC<slidesC.length-1){indexC++;move(trackC,slidesC,indexC);}
+    });
+
+    /* === função comum === */
+    function move(track,slides,idx){
+      const w = slides[0].clientWidth;
+      track.style.transform = `translateX(-${w*idx}px)`;
+    }
+    /* reajusta se a largura mudar */
+    window.addEventListener('resize',()=>{
+      move(trackI,slidesI,indexI);
+      move(trackC,slidesC,indexC);
+    });
+</script>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = "100vh";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+
+</body>
+</html>
